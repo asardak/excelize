@@ -79,6 +79,10 @@ func (f *File) setDefaultTimeStyle(sheet, axis string, format int) {
 	}
 }
 
+func (f *File) GetWorkSheetReader(sheet string) *xlsxWorksheet {
+	return f.workSheetReader(sheet)
+}
+
 // workSheetReader provides function to get the pointer to the structure after
 // deserialization by given worksheet name.
 func (f *File) workSheetReader(sheet string) *xlsxWorksheet {
